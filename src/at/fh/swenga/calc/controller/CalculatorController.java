@@ -24,15 +24,13 @@ public class CalculatorController {
 	}
 	
 	@RequestMapping("/calcV2")
-	public ModelAndView calcV2(@RequestParam int num1, @RequestParam int num2) {
- 
+	public ModelAndView calcV2(@RequestParam(name="number1") int num1, @RequestParam(name="number2") int num2) {
 		ModelAndView mav = new ModelAndView("result", "result", num1 + num2);
 		return mav;
 	}
  
 	@RequestMapping("/calcV3")
-	public ModelAndView calcV3(@RequestParam int num1, @RequestParam int num2) {
- 
+	public ModelAndView calcV3(@RequestParam(name="number1") int num1, @RequestParam(name="number2") int num2) {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("result", num1 + num2);
 		mav.setViewName("result");
@@ -47,9 +45,8 @@ public class CalculatorController {
 	 */
 	@RequestMapping("/calcV4")
 	public ModelAndView calcV4(HttpServletRequest request) {
- 
-		String num1String = request.getParameter("num1");
-		String num2String = request.getParameter("num2");
+		String num1String = request.getParameter("number1");
+		String num2String = request.getParameter("number2");
  
 		int num1 = Integer.parseInt(num1String);
 		int num2 = Integer.parseInt(num2String);
@@ -62,8 +59,6 @@ public class CalculatorController {
 	
 	@ExceptionHandler(Exception.class)
 	public String handleAllException(Exception ex) {
- 
 		return "showError";
- 
 	}
 }

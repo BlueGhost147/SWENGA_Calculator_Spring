@@ -7,7 +7,7 @@
 <body>
  
 	<!-- Example Entity Body num1=13&num2=17&add=Add -->
-	<form method="post" action="./calc">
+	<form method="post" action="./calcV3">
 		<table>
 			<tr>
 				<td>Num 1:</td>

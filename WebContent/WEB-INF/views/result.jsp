@@ -8,7 +8,7 @@
 </head>
 <body>
  
-<h1>${param.num1}+${param.num2}=${result}</h1>
+<h1>${param.number1}+${param.number2}=${result}</h1>
 <a href="./">Back</a>
 </body>
 </html>
